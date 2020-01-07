@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 
 
 namespace ExceptionsDemo
@@ -62,9 +64,11 @@ namespace ExceptionsDemo
         // Methods
         public void AddCrew(string position, string name)
         {
+            
             // If the position exists in the roster, add the name to its list
-            if (roster.ContainsKey(position))
+            if (roster.ContainsKey(position)) 
             {
+            
                 roster[position].Add(name);
             }
             // If the position is not yet in the roster, add it
@@ -72,6 +76,7 @@ namespace ExceptionsDemo
             {
                 SetCrew(position, name);
             }
+            
         }
 
         public void SetCrew(string position, string name)
